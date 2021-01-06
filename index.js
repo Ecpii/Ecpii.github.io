@@ -110,3 +110,77 @@ function findTimeCircumference() {
         <p> Circumference using hours as radius: <b>${circumference}</b></p>
         `
 }
+
+async function dealBlackjack() {
+    document.getElementById('dealer-cards').innerHTML = ''
+    document.getElementById('dealer-log').innerHTML = ''
+    const deck = []
+    let cardNum
+    for (cardNum = 2; cardNum < 11; cardNum++) {
+        for (let i = 0; i < 4; i++) {
+            deck.push(cardNum)
+        }
+    }
+    for (let i = 0; i < 4; i++) {
+        deck.push('A')
+        deck.push('K')
+        deck.push('Q')
+        deck.push('J')
+    }
+
+    let numCards = 0
+    let dealerSum = 0
+    let dealerAces = 0
+    while (true) {
+        // wait half a second between each card
+        await new Promise(r => setTimeout(r, 500))
+
+        const newCardIndex = Math.floor(Math.random() * deck.length)
+        const newCard = deck[newCardIndex]
+        numCards++
+        deck.splice(newCardIndex, 1)
+        document.getElementById('dealer-cards').innerHTML +=`
+            <div class="playing-card">
+                <div class="playing-card-num">
+                    ${newCard}
+                </div>
+            </div>`
+
+        if (newCard === 'A') {
+            dealerAces += 1
+            dealerSum += 11
+        } else if (typeof newCard == 'number') {
+            dealerSum += newCard
+        } else {
+            dealerSum += 10
+        }
+
+        while (dealerSum > 21 && dealerAces) {
+            dealerSum -= 10
+            dealerAces--
+        }
+        // printing and sum validation
+        document.getElementById('dealer-log').innerHTML +=
+            `<h3>Dealer Sum: ${dealerSum}</h3>`
+        if (dealerSum < 17) {
+            document.getElementById('dealer-log').innerHTML +=
+                '<p>Sum less than 17, dealer will hit again</p>'
+            continue
+        } else if (dealerSum < 21) {
+            document.getElementById('dealer-log').innerHTML +=
+                '<p>Sum greater than 17, dealer will stay</p>'
+        } else if (dealerSum === 21) {
+            if (numCards === 2) {
+                document.getElementById('dealer-log').innerHTML +=
+                    '<p>Dealer got Blackjack!!</p>'
+                break
+            }
+            document.getElementById('dealer-log').innerHTML +=
+                '<p>Dealer got 21 exactly!</p>'
+        } else {
+            document.getElementById('dealer-log').innerHTML +=
+                '<p>Sum greater than 21, dealer busted!</p>'
+        }
+        break
+    }
+}
