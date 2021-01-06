@@ -1,0 +1,45 @@
+body {
+    background-color: #363941;
+}
+
+a {
+    color: #9a9a9a;
+    text-decoration: none;
+}
+a:hover {
+    color: #dcddde;
+}
+
+body, button, input {
+    color: #dcddde;
+    font-family: "Source Sans Pro", sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: 2px solid gray;
+    background-color: transparent;
+    outline: none;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+}
+
+input[type=number] {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #dcddde;
+    color: #363941;
+}
+
