@@ -1,5 +1,5 @@
 function showGreeting() {
-    document.getElementById('displayArea').innerHTML =
+    document.getElementById('display-area').innerHTML =
         `
         <p>
         Welcome to my website!
@@ -11,7 +11,7 @@ function showGreeting() {
 }
 
 function showEquations(num1, num2) {
-    document.getElementById('displayArea').innerHTML =
+    document.getElementById('display-area').innerHTML =
         `
         <p> ${num1} + ${num2} = ${num1 + num2} </p>
         <p> ${num1} - ${num2} = ${num1 - num2} </p>
@@ -89,7 +89,7 @@ function showCoinEquations() {
     }
 
     const allCoinCombinations = findCoinCombinations(targetCents, [0, 0, 0, 0])
-    document.getElementById('displayArea').innerHTML = allCoinCombinations.reduce((ikeaHTML, coinCombo) => {
+    document.getElementById('display-area').innerHTML = allCoinCombinations.reduce((ikeaHTML, coinCombo) => {
         // fulfilling the variable requirement
         const quarters = coinCombo[0]
         const dimes = coinCombo[1]
@@ -104,7 +104,7 @@ function findTimeCircumference() {
     let currentDate = new Date()
     let radius = currentDate.getHours()
     let circumference = (2 * radius * Math.PI).toFixed(3)
-    document.getElementById('displayArea').innerHTML =
+    document.getElementById('display-area').innerHTML =
         `
         <p> Time of button click: ${currentDate.toTimeString()} </p>
         <p> Circumference using hours as radius: <b>${circumference}</b></p>
@@ -203,17 +203,17 @@ function isPrime(num) {
 function findPrimeNumbers() {
     if (document.getElementById('min-num').value.includes('.') ||
         document.getElementById('max-num').value.includes('.')) {
-        document.getElementById('displayArea').innerHTML = '<b>You entered a decimal value!</b>'
+        document.getElementById('display-area').innerHTML = '<b>You entered a decimal value!</b>'
         return
     }
     const minNum = parseInt(document.getElementById('min-num').value, 10)
     const maxNum = parseInt(document.getElementById('max-num').value, 10)
     if (minNum < 0 || maxNum < 0) {
-        document.getElementById('displayArea').innerHTML = '<b>You entered a negative value!</b>'
+        document.getElementById('display-area').innerHTML = '<b>You entered a negative value!</b>'
         return
     }
     if (minNum > maxNum) {
-        document.getElementById('displayArea').innerHTML = '<b>The upper limit number should be greater than the lower limit!</b>'
+        document.getElementById('display-area').innerHTML = '<b>The upper limit number should be greater than the lower limit!</b>'
         return
     }
     const foundPrimeNums = []
@@ -223,11 +223,47 @@ function findPrimeNumbers() {
         }
     }
     if (foundPrimeNums.length) {
-        document.getElementById('displayArea').innerHTML = `
+        document.getElementById('display-area').innerHTML = `
         <b>Prime numbers in specified range:</b>
         <p>${foundPrimeNums}</p>`
     } else {
-        document.getElementById('displayArea').innerHTML = '<b>No prime numbers found in range</b>'
+        document.getElementById('display-area').innerHTML = '<b>No prime numbers found in range</b>'
+    }
+}
+
+function makeCelebrityCipher() {
+    const originalText = document.getElementById('celebrity-quote').value.split('')
+    if (!originalText.length) {  // check is user inputted nothing
+        document.getElementById('display-area').innerHTML = "<b>No text entered!</b>"
+        return
     }
 
+    const letterMapping = {}      // an object mapping each original letter to a new one
+    const validLetters = []       // array of whether a letter has been used or not
+    for (let i = 0; i < 26; i++) {
+        validLetters.push(true)   // initialize validLetters array with all true
+    }
+    for (let unicodeNum = 97; unicodeNum < 123; unicodeNum++) {
+        let randomLetter = -1;
+        do {
+            randomLetter = Math.floor(Math.random() * 26)  // generate a number representing a random letter
+        } while (!validLetters[randomLetter])                 // keep doing this until we get an unused letter
+        validLetters[randomLetter] = false                    // make the used letter no longer valid
+        letterMapping[String.fromCharCode(unicodeNum)] = String.fromCharCode(randomLetter + 97)
+        // unicode stuff to turn 0-25 number into 97-123 number (unicodes for lowercase letters)
+    }
+
+    const newText = originalText.map((letter) => {
+        if (letter in letterMapping) {
+            return letterMapping[letter]
+        }
+        if (letter.toLowerCase() in letterMapping) {
+            return letterMapping[letter.toLowerCase()].toUpperCase()
+        }
+        return letter
+    })
+
+    document.getElementById('display-area').innerHTML = `
+    <b>New Celebrity Cipher:</b>
+    <p>${newText.join('')}</p>`
 }

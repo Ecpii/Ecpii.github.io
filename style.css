@@ -10,7 +10,7 @@ a:hover {
     color: #dcddde;
 }
 
-body, button, input {
+body, button, input, textarea {
     color: #dcddde;
     font-family: "Source Sans Pro", sans-serif;
     text-align: center;
@@ -26,7 +26,7 @@ button {
     outline: none;
 }
 
-input {
+input, textarea {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid gray;
