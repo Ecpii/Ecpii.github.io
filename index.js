@@ -184,3 +184,50 @@ async function dealBlackjack() {
         break
     }
 }
+
+function isPrime(num) {
+    if (num === 1) {
+        return false
+    }
+    else if (!(num & 1)) {
+        return num === 2
+    }
+    for (let i = 3; i < Math.sqrt(num) + 1; i += 2) {
+        if (!(num % i)) {
+            return false
+        }
+    }
+    return true
+}
+
+function findPrimeNumbers() {
+    if (document.getElementById('min-num').value.includes('.') ||
+        document.getElementById('max-num').value.includes('.')) {
+        document.getElementById('displayArea').innerHTML = '<b>You entered a decimal value!</b>'
+        return
+    }
+    const minNum = parseInt(document.getElementById('min-num').value, 10)
+    const maxNum = parseInt(document.getElementById('max-num').value, 10)
+    if (minNum < 0 || maxNum < 0) {
+        document.getElementById('displayArea').innerHTML = '<b>You entered a negative value!</b>'
+        return
+    }
+    if (minNum > maxNum) {
+        document.getElementById('displayArea').innerHTML = '<b>The upper limit number should be greater than the lower limit!</b>'
+        return
+    }
+    const foundPrimeNums = []
+    for (let num = minNum & 1 ? minNum : minNum + 1; num < maxNum + 1; num++) {
+        if (isPrime(num)) {
+            foundPrimeNums.push(num)
+        }
+    }
+    if (foundPrimeNums.length) {
+        document.getElementById('displayArea').innerHTML = `
+        <b>Prime numbers in specified range:</b>
+        <p>${foundPrimeNums}</p>`
+    } else {
+        document.getElementById('displayArea').innerHTML = '<b>No prime numbers found in range</b>'
+    }
+
+}
