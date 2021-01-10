@@ -1,3 +1,5 @@
+const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
 function showGreeting() {
     document.getElementById('display-area').innerHTML =
         `
@@ -139,7 +141,7 @@ async function dealBlackjack() {
         const newCard = deck[newCardIndex]
         numCards++
         deck.splice(newCardIndex, 1)
-        document.getElementById('dealer-cards').innerHTML +=`
+        document.getElementById('dealer-cards').innerHTML += `
             <div class="playing-card">
                 <div class="playing-card-num">
                     ${newCard}
@@ -188,8 +190,7 @@ async function dealBlackjack() {
 function isPrime(num) {
     if (num === 1) {
         return false
-    }
-    else if (!(num & 1)) {
+    } else if (!(num & 1)) {
         return num === 2
     }
     for (let i = 3; i < Math.sqrt(num) + 1; i += 2) {
@@ -266,4 +267,27 @@ function makeCelebrityCipher() {
     document.getElementById('display-area').innerHTML = `
     <b>New Celebrity Cipher:</b>
     <p>${newText.join('')}</p>`
+}
+
+function waitingForTheWeekend() {
+    const currentDate = new Date()
+    if (currentDate.getDay() === 0 || currentDate.getDay() === 6) {
+        isWeekend(currentDate)
+    } else {
+        isWeekday(currentDate)
+    }
+}
+
+function isWeekday(date) {
+    const daysToWeekend = 6 - date.getDay()
+    document.getElementById('display-area').innerHTML =
+        `<p>It is a weekday (${daysOfTheWeek[date.getDay()]}), 
+and there are <b>${daysToWeekend} days</b> until it is the weekend.</p>`
+}
+
+function isWeekend(date) {
+    const hoursLeft = 24 - date.getHours() + (date.getDay() === 6 ? 24 : 0)
+    document.getElementById('display-area').innerHTML =
+        `<p> It is the weekend (${daysOfTheWeek[date.getDay()]}), 
+and it ends in approximately <b>${hoursLeft} hours.</b></p>`
 }
