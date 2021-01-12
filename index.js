@@ -291,3 +291,4 @@ function isWeekend(date) {
         `<p> It is the weekend (${daysOfTheWeek[date.getDay()]}), 
 and it ends in approximately <b>${hoursLeft} hours.</b></p>`
 }
+
