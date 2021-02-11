@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Design Scheme</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+<body>
+
+<div id="display-area">
+    <h2>Reading Files</h2>
+    <p>
+        The <code>cat</code> command will read the contents of a file argument
+        when provided with just one argument.
+    </p>
+
+    <div class="multiline-code">
+        <span class="command">cat</span> [OPTION]… [FILE]…
+    </div>
+
+    <p>
+    The name of the command comes from the word <span>concatenate</span>,
+    which means to join together. When provided with multiple files, it
+    will combine the contents of them and push them to STDOUT.
+    </p>
+    <h2>Replacing Contents</h2>
+<p>
+
+    The <code>tr</code> command, or <span class="emphasis">translate</span>
+    command will change one set of characters to another. It is analogous to
+    'find and replace'.
+</p>
+
+    <div class="multiline-code">
+        <span class="command">tr</span> [OPTION]… SET1 [SET2]
+    </div>
+
+    <p>
+        As with other commands, you can specify a range of characters for a set:
+    </p>
+
+    <div class="multiline-code">
+        <span class="command">cat</span> alpha-first.txt <span class="pipe">|</span>
+        <span class="command">tr</span> <span class="string">'a-z' 'A-Z'</span>
+        <br><br>
+        A IS FOR ANIMAL
+        <br>
+        B IS FOR BEAR
+        <br>
+        C IS FOR CAT
+        <br>
+        D IS FOR DOG
+        <br>
+        E IS FOR ELEPHANT
+        <br>
+        F IS FOR FLOWER
+        <br>
+    </div>
+
+    <div class="theme-buttons">
+        <button id="pastel-dark" onclick="setPastelDarkTheme()">Pastel Dark</button>
+        <button id="ayu-vim" onclick="setAyuTheme()">Ayu</button>
+        <button id="google-dev" onclick="setGoogleTheme()">Google</button>
+        <button id="default" onclick="resetDefaults()" class="currently-selected">Default</button>
+    </div>
+</div>
+
+
+<script src="designScheme.js"></script>
+</body>
+</html>
