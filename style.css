@@ -60,7 +60,6 @@ button:hover {
     height: 220px;
     border: 3px solid #93b5a6;
     border-radius: 10px;
-
 }
 
 .playing-card-num {
@@ -72,29 +71,6 @@ button:hover {
     transform: translate(-50%, -50%);
     font: 100px 'JetBrains Mono', monospace;
     font-weight: bold
-}
-
-#character-card-grid {
-    display: flex;
-    justify-content: center;
-}
-
-.character-card {
-    margin: 0 1vw;
-    background-color: #0c1522;
-    padding: 1vw;
-    border-radius: 10px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    transition: background-color 300ms;
-    user-select: none;
-    cursor: pointer;
-}
-
-.character-card img {
-    border-radius: 5px;
-    width: 230px;
-    height: 345px;
 }
 
 .hide {

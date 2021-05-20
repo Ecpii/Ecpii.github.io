@@ -1,0 +1,46 @@
+@keyframes border-pulsate {
+    0%   { border-color: rgba(255, 255, 255, 1); }
+    50%  { border-color: rgba(255, 255, 255, 0); }
+    100% { border-color: rgba(255, 255, 255, 1); }
+}
+
+#character-card-grid {
+    display: grid;
+    grid: 50% 50% / 50% 50%;
+    grid-row-gap: 20px
+}
+
+.character-card {
+    background-color: #0c1522;
+    padding: 1vw;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    user-select: none;
+    cursor: pointer;
+    width: 250px;
+    margin: 0;
+}
+
+.highlighted {
+    border: 2px solid white;
+    animation: border-pulsate 2s infinite;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    width: 300px;
+    padding: 2em;
+    background: #161e2e;
+    border-radius: 25px;
+    margin-left: -20px;
+    z-index: -1;
+    font-family: Roboto, sans-serif;
+    line-height: 2rem;
+}
