@@ -9,6 +9,9 @@ window.addEventListener("keydown", parseKeyEvent)
 
 function handleClick() {
     toggleDescription(this)
+    characterCards.forEach(element => {
+        element.classList.remove("highlighted")
+    })
 }
 function toggleDescription(targetCard) {
     targetCard.parentNode.children[1].classList.toggle("hide")
