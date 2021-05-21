@@ -1,6 +1,5 @@
-#menu-bar {
+#nav-bar {
     width: 100%;
-    border: 1px solid grey;
     display: flex;
 }
 
@@ -8,23 +7,23 @@ a {
     text-decoration: none;
 }
 
-.menu-item {
+.nav-item {
     padding: 20px 0;
     width: 160px;
     transform: skew(-25deg);
     transition: width .5s;
 }
 
-.menu-item:hover {
+.nav-item:hover {
     width: 200px;
 }
 
-.logo-btn img {
+.home-btn img {
     height: 60px;
     margin: auto
 }
 
-.logo-btn {
+.home-btn {
     height: 60px;
     transform: skew(-25deg);
     background-color: #7f5bac;
@@ -33,7 +32,7 @@ a {
     z-index: 1
 }
 
-.menu-item-contents {
+.nav-item-contents {
     transform: skew(25deg);
     text-align: center;
     color: white;

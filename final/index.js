@@ -1,6 +1,6 @@
 const strategies = Array.from(document.getElementsByClassName("strat-item"))
 const mechanics = Array.from(document.getElementsByClassName("mech-item"))
-const menuItems = Array.from(document.getElementById("menu-bar").children).map(element =>
+const menuItems = Array.from(document.getElementById("nav-bar").children).map(element =>
     element.children[0]
 )
 
