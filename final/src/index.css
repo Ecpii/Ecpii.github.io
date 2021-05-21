@@ -1,0 +1,29 @@
+video {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: -2
+}
+
+#center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: white;
+    background-color: rgba(0,0,0, .4);
+    padding: 20px;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+#center-text:hover {
+    opacity: 0
+}
+
+#tagline {
+    font-style: italic
+}
