@@ -1,0 +1,13 @@
+#clock {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font: bold 26rem 'Fira Sans', sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #555369; /* set an initial background color that doesn't blind the user */
+    transition: background-color 1s;
+}
