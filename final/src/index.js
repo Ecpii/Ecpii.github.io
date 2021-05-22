@@ -9,7 +9,7 @@ video.addEventListener("pause", handleVideoEnd)
 
 function handleVideoEnd() {
     const nextVideoNum = (parseInt(this.currentSrc.charAt(this.currentSrc.length - 5)) + 1) % 3
-    this.src = `../public/${nextVideoNum}.mp4`
     document.querySelector("#tagline").innerHTML = taglines[nextVideoNum]
+    this.src = `../public/${nextVideoNum}.mp4`
     this.load()
 }
