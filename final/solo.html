@@ -66,168 +66,196 @@
         </div>
     </a>
 </div>
-<div id="content">
-    <h1 style="margin-bottom: 10px">Solo Play</h1>
-    <h3>How do you control TETR.IO? What are the objectives of TETR.IO?</h3>
+<div id="container">
 
-    <p>
-        TETR.IO plays like most other modern Tetris clones, but it's still worth documenting some
-        behaviors here.
-    </p>
+    <div id="content">
+        <h1 style="margin-bottom: 10px">Solo Play</h1>
+        <h3>How do you control TETR.IO? What are the objectives of TETR.IO?</h3>
 
-    <h2>Movement</h2>
-    <p>
-        To control pieces in TETR.IO, you can use the left and right arrow keys to move pieces left
-        and right. If you hold one of these directional keys, after a period of delay known as
-        <span class="keyword">DAS</span>, the piece will automatically continue moving in that
-        direction, in intervals known as <span class="keyword">ARR</span>.
-    </p>
-
-    <div class="canvas-container">
         <p>
-            <b style="font-size: 1.2rem">Try it!</b>
-            <br>
-            <em>DAS = 167ms, ARR = 33ms</em>
+            TETR.IO plays like most other modern Tetris clones, but it's still worth documenting
+            some
+            behaviors here.
         </p>
-        <canvas id="auto-shift-demo" width="630" height="200">
-            Your browser does not support canvas
-        </canvas>
+
+        <h2>Movement</h2>
+        <p>
+            To control pieces in TETR.IO, you can use the left and right arrow keys to move pieces
+            left
+            and right. If you hold one of these directional keys, after a period of delay known as
+            <span class="keyword">DAS</span>, the piece will automatically continue moving in that
+            direction, in intervals known as <span class="keyword">ARR</span>.
+        </p>
+
+        <div class="canvas-container">
+            <p>
+                <b style="font-size: 1.2rem">Try it!</b>
+                <br>
+                <em>DAS = 167ms, ARR = 33ms</em>
+            </p>
+            <canvas id="auto-shift-demo" width="630" height="200">
+                Your browser does not support canvas
+            </canvas>
+        </div>
+
+        <p>
+            In TETR.IO, both of these values can be customized, which can make the game
+            <em>very</em>
+            fast-paced. In fact, most of the highest-rated played play with 0ms ARR and around 100ms
+            DAS.
+        </p>
+
+        <p>
+            To rotate pieces, you can use the <b>Z</b> and <b>X</b> keys for counterclockwise and
+            clockwise rotation, respectively. The different rotation states are governed by the
+            <a href="https://tetris.fandom.com/wiki/SRS">Super Rotation System</a> made originally
+            by
+            the Tetris Company. TETR.IO uses a slightly modified version of this rotation system to
+            change how I pieces (the long ones) behave.
+        </p>
+
+        <p>
+            This rotation system also governs how pieces behave when their desired rotation state is
+            overlapped by an already existing block or wall. Each rotation has four different
+            positions
+            that the game will try in order when rotating. Once a suitable rotation has been found,
+            the
+            piece will move to that orientation. If none of the four positions are valid, then no
+            rotation
+            occurs. For more information, read <a
+                href="https://four.lol/srs/kicks-overview">this</a>.
+        </p>
+
+        <p>
+            TETR.IO is also somewhat unique in that it offers the option to spin a piece 180 degrees
+            in
+            one move. This can be achieved using the A key, and the kicks are as follows:
+        </p>
+
+        <img src="https://pbs.twimg.com/media/EaWH8QgXgAArDEV?format=png&name=large"
+             alt="TETR.IO 180 degree kick table" width="100%"/>
+
+        <p>
+            Finally, the last aspect of moving is dropping pieces on to the field. There are two
+            main
+            ways of doing this in TETR.IO:
+            <span class="keyword">hard drop</span> and <span class="keyword">soft drop</span>.
+            The majority of the time you want to place a piece, you will use hard drop; this will
+            just teleport the piece downward to the ground or on top of a piece. Soft drop makes the
+            piece move downward, but when it contacts another piece or the ground below it, it will
+            not
+            instantly lock and allow you to continue controlling it.
+        </p>
+
+        <h2>Randomizer and Hold</h2>
+        <p>
+            The randomizer in TETR.IO is a 7-bag system, which means that all seven kinds of pieces
+            are
+            shuffled in a "bag" and then given out, guaranteeing that there will be one instance of
+            each piece every seven pieces. It allows for a more forgiving randomizer, since the
+            longest
+            you can go without a given piece is <span class="keyword">12 pieces</span>.
+        </p>
+
+        <p>
+            However, there is still a mechanism to help you out if the randomizer gives you a piece
+            you
+            don't want: <span class="keyword">hold</span>. This feature allows you to store a piece
+            you
+            currently control into a hold area. Then, you will control the next piece in queue,
+            allowing
+            you to essentially "skip" a piece.
+        </p>
+
+        <img src="public/hold.gif" alt="Hold being used" class="center"/>
+
+        <p>
+            If your hold area already contains a piece, then pressing the hold key will simply swap
+            your current piece and the piece in the hold area. You can only do this once per piece.
+        </p>
+
+        <h2>Sprint</h2>
+        <img src="public/sprint.png" alt="TETR.IO Sprint Description"/>
+        <p>
+            Sprint is one of the most universal modes in not just TETR.IO but Tetris as a whole. It
+            is a
+            competition of speed where the objective is to clear a set amount of lines as fast as
+            possible.
+        </p>
+
+        <p>
+            In TETR.IO the only sprint mode is 40 lines, and the objective is simply to clear those
+            40
+            lines as fast as possible. Given the customizable ARR and DAS, there is technically no
+            speed
+            limit other than the human capacity. The current world record is 15.812 seconds, set by
+            Hiryu.
+        </p>
+
+        <iframe
+                height="360"
+                src="https://www.youtube.com/embed/1i8mCKJC9Ao"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="center"
+        ></iframe>
+
+        <h2>Blitz</h2>
+
+        <img src="public/blitz.png" alt="TETR.IO Blitz Description"/>
+
+        <p>
+            The point of this mode is to score the most points as possible in 2 minutes, as gravity
+            increases greatly. It is a stressful, high-energy mode where you go all out to try and
+            rack
+            up as many points as possible in many different ways.
+        </p>
+
+        <p>
+            Almost everything you do will net you points, like placing pieces. The goal is to do the
+            actions
+            that will maximize your point gain. For example, clearing a line will net you more
+            points
+            than placing a block. <span class="keyword">Clearing 4 lines at once</span> nets you
+            even
+            more
+            points. <span class="keyword">Clearing every block off of the board</span> nets you even
+            more.
+        </p>
+
+        <p>
+            The current world record (and most other high scores) use the last strategy of doing
+            perfect
+            clears to earn the most points:
+        </p>
+
+        <iframe
+                height="360px"
+                src="https://www.youtube.com/embed/mt-LxWfKxdw"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="center"
+        ></iframe>
+
+        <h2>Zen</h2>
+
+        <img src="public/zen.png" alt="TETR.IO Zen Description"/>
+
+        <p>
+            Zen is a training mode where you can control almost everything to practice your stacking
+            skills. Points are still tracked, but there is no competitive leaderboard or objective.
+        </p>
+
+        <img src="public/zen-example.jpg" alt="Zen Gameplay" width="100%"/>
+
     </div>
+    <div id="popups">
 
-    <p>
-        In TETR.IO, both of these values can be customized, which can make the game <em>very</em>
-        fast-paced. In fact, most of the highest-rated played play with 0ms ARR and around 100ms
-        DAS.
-    </p>
-
-    <p>
-        To rotate pieces, you can use the <b>Z</b> and <b>X</b> keys for counterclockwise and
-        clockwise rotation, respectively. The different rotation states are governed by the
-        <a href="https://tetris.fandom.com/wiki/SRS">Super Rotation System</a> made originally by
-        the Tetris Company. TETR.IO uses a slightly modified version of this rotation system to
-        change how I pieces (the long ones) behave.
-    </p>
-
-    <p>
-        This rotation system also governs how pieces behave when their desired rotation state is
-        overlapped by an already existing block or wall. Each rotation has four different positions
-        that the game will try in order when rotating. Once a suitable rotation has been found, the
-        piece will move to that orientation. If none of the four positions are valid, then no
-        rotation
-        occurs. For more information, read <a href="https://four.lol/srs/kicks-overview">this</a>.
-    </p>
-
-    <p>
-        TETR.IO is also somewhat unique in that it offers the option to spin a piece 180 degrees in
-        one move. This can be achieved using the A key, and the kicks are as follows:
-    </p>
-
-    <img src="https://pbs.twimg.com/media/EaWH8QgXgAArDEV?format=png&name=large"
-         alt="TETR.IO 180 degree kick table" width="100%"/>
-
-    <p>
-        Finally, the last aspect of moving is dropping pieces on to the field. There are two main
-        ways of doing this in TETR.IO:
-        <span class="keyword">hard drop</span> and <span class="keyword">soft drop</span>.
-        The majority of the time you want to place a piece, you will use hard drop; this will
-        just teleport the piece downward to the ground or on top of a piece. Soft drop makes the
-        piece move downward, but when it contacts another piece or the ground below it, it will not
-        instantly lock and allow you to continue controlling it.
-    </p>
-
-    <h2>Randomizer and Hold</h2>
-    <p>
-        The randomizer in TETR.IO is a 7-bag system, which means that all seven kinds of pieces are
-        shuffled in a "bag" and then given out, guaranteeing that there will be one instance of
-        each piece every seven pieces. It allows for a more forgiving randomizer, since the longest
-        you can go without a given piece is <span class="keyword">12 pieces</span>.
-    </p>
-
-    <p>
-        However, there is still a mechanism to help you out if the randomizer gives you a piece you
-        don't want: <span class="keyword">hold</span>. This feature allows you to store a piece you
-        currently control into a hold area. Then, you will control the next piece in queue, allowing
-        you to essentially "skip" a piece.
-    </p>
-
-    <img src="public/hold.gif" alt="Hold being used" class="center"/>
-
-    <p>
-        If your hold area already contains a piece, then pressing the hold key will simply swap
-        your current piece and the piece in the hold area. You can only do this once per piece.
-    </p>
-
-    <h2>Sprint</h2>
-    <img src="public/sprint.png" alt="TETR.IO Sprint Description"/>
-    <p>
-        Sprint is one of the most universal modes in not just TETR.IO but Tetris as a whole. It is a
-        competition of speed where the objective is to clear a set amount of lines as fast as
-        possible.
-    </p>
-
-    <p>
-        In TETR.IO the only sprint mode is 40 lines, and the objective is simply to clear those 40
-        lines as fast as possible. Given the customizable ARR and DAS, there is technically no speed
-        limit other than the human capacity. The current world record is 15.812 seconds, set by
-        Hiryu.
-    </p>
-
-    <iframe
-            height="360"
-            src="https://www.youtube.com/embed/1i8mCKJC9Ao"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="center"
-    ></iframe>
-
-    <h2>Blitz</h2>
-
-    <img src="public/blitz.png" alt="TETR.IO Blitz Description"/>
-
-    <p>
-        The point of this mode is to score the most points as possible in 2 minutes, as gravity
-        increases greatly. It is a stressful, high-energy mode where you go all out to try and rack
-        up as many points as possible in many different ways.
-    </p>
-
-    <p>
-        Almost everything you do will net you points, like placing pieces. The goal is to do the
-        actions
-        that will maximize your point gain. For example, clearing a line will net you more points
-        than placing a block. <span class="keyword">Clearing 4 lines at once</span> nets you even
-        more
-        points. <span class="keyword">Clearing every block off of the board</span> nets you even
-        more.
-    </p>
-
-    <p>
-        The current world record (and most other high scores) use the last strategy of doing perfect
-        clears to earn the most points:
-    </p>
-
-    <iframe
-            height="360px"
-            src="https://www.youtube.com/embed/mt-LxWfKxdw"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="center"
-    ></iframe>
-
-    <h2>Zen</h2>
-
-    <img src="public/zen.png" alt="TETR.IO Zen Description"/>
-
-    <p>
-        Zen is a training mode where you can control almost everything to practice your stacking
-        skills. Points are still tracked, but there is no competitive leaderboard or objective.
-    </p>
-
-    <img src="public/zen-example.jpg" alt="Zen Gameplay" width="100%"/>
-
+    </div>
 </div>
 
 </body>

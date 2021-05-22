@@ -62,3 +62,34 @@ window.addEventListener("keyup", () => {
     cancelAnimationFrame(autoShifterId)
     clearTimeout(delayId)
 })
+
+const popupArea = document.querySelector('#popups')
+const keywords = Array.from(document.getElementsByClassName("keyword"))
+const infoPopups = {
+    "DAS": "<b>D</b>elayed <b>A</b>uto <b>S</b>hift, the amount of time to delay before automatically repeating a movement in a direction.",
+    "ARR": "<b>A</b>uto <b>R</b>epeat <b>R</b>ate, the time between repetitions of a movement after DAS is charged.",
+    "hard drop": "An instant drop of a piece down to whatever is below it. Bound to <b>spacebar</b>" +
+        "by default.",
+    "soft drop": "A slow drop of a piece down to whatever is below it, so that it can still be manipulated " +
+        "after coming in contact with something below. Bound to <b>down arrow</b> by default." +
+        "<br>" +
+        "In TETR.IO, you can set this speed to be instant, keeping the fast pace of the game by making soft" +
+        "drop behave similarly to hard drop.",
+    "12 pieces": "In the worst case scenario, you encounter a piece at the start of one bag and at the" +
+        "end of the next bag. For example, if you want I pieces, a worst case scenario could look like this:" +
+        "<br>" +
+        "<b>I</b>ZSTOLJOZJLST<b>I</b>",
+    "hold": "A temporary storage for pieces. Bound to <b>Shift</b> by default.",
+    "Clearing 4 lines at once": "Also known as a <b>Tetris</b>, or Quad in TETR.IO for copyright reasons.",
+    "Clearing every block off of the board": "Known as a <b>Perfect Clear (PC)</b> or <b>All Clear (AC)</b>."
+}
+keywords.forEach((element) => {
+    element.addEventListener("click", displayPopup)
+})
+
+function displayPopup(e) {
+    console.log(e)
+
+    popupArea.innerHTML = `
+    <div class="info-box" style="top: calc(${e.pageY - 100}px - 1rem)">${infoPopups[this.innerHTML]}</div>`
+}
