@@ -81,7 +81,8 @@ const infoPopups = {
         "<b>I</b>ZSTOLJOZJLST<b>I</b>",
     "hold": "A temporary storage for pieces. Bound to <b>Shift</b> by default.",
     "Clearing 4 lines at once": "Also known as a <b>Tetris</b>, or Quad in TETR.IO for copyright reasons.",
-    "Clearing every block off of the board": "Known as a <b>Perfect Clear (PC)</b> or <b>All Clear (AC)</b>."
+    "Clearing every block off of the board": "Known as a <b>Perfect Clear (PC)</b> or <b>All Clear (AC)</b>.<br>" +
+        "<video autoplay muted loop width='300'> <source src='public/all%20clear.mp4' type='video/mp4'></video>"
 }
 keywords.forEach((element) => {
     element.addEventListener("click", displayPopup)
