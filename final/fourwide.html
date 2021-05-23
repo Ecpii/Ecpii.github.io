@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to TETR.IO - 4-Wide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fourwide.css">
+    <script src="src/fourwide.js" defer></script>
+</head>
+<body>
+<div id="nav-bar">
+    <a href="index.html">
+        <div class="home-btn">
+            <img src="public/tetrio-color.svg" alt="TETR.IO" class="nav-item-contents"/>
+        </div>
+    </a>
+    <a href="#">
+        <div class="nav-item green" id="mech-btn">
+            <div class="nav-item-contents">
+                MECHANICS
+            </div>
+        </div>
+    </a>
+    <a href="solo.html">
+        <div class="nav-item purple mech-item">
+            <div class="nav-item-contents">
+                SOLO
+            </div>
+        </div>
+    </a>
+    <a href="multiplayer.html">
+        <div class="nav-item purple mech-item">
+            <div class="nav-item-contents">
+                MULTI
+            </div>
+        </div>
+    </a>
+    <a href="#">
+        <div class="nav-item pink" id="strat-btn">
+            <div class="nav-item-contents">
+                STRATEGIES
+            </div>
+        </div>
+    </a>
+    <a href="fourwide.html">
+        <div class="nav-item purple strat-item">
+            <div class="nav-item-contents">
+                FOUR-WIDE
+            </div>
+        </div>
+    </a>
+    <a href="tspins.html">
+        <div class="nav-item purple strat-item">
+            <div class="nav-item-contents">
+                T-SPIN
+            </div>
+        </div>
+    </a>
+    <a href="pc.html">
+        <div class="nav-item purple strat-item">
+            <div class="nav-item-contents">
+                PERFECT CLEAR
+            </div>
+        </div>
+    </a>
+    <a href="about.html">
+        <div class="nav-item grey">
+            <div class="nav-item-contents">
+                ABOUT
+            </div>
+        </div>
+    </a>
+</div>
+
+<div id="container">
+    <div id="content">
+        <h1>4-Wide</h1>
+        <h3>An infamous, but effective, winning strategy.</h3>
+        <p>
+            In the garbage table shown before in <a href="multiplayer.html">multi</a>, you may
+            have noticed that the garbage table goes all the way to 20 in
+            <span class="keyword">combo</span>, and the garbage amounts increase with combo.
+            This can give your attacks tremendous combo power, since all the attacks will add up
+            and be sent to your opponent. The following widget shows how much attack would be sent
+            clearing <em>just singles</em> to get to a certain combo.
+        </p>
+
+        <div id="combo-demo">
+            <label for="combo-slider">Combo: <span>1x</span></label><br>
+            <input type="range" min="1" max="20" value="1" class="slider" id="combo-slider">
+            <p>Cumulative attack:</p>
+            <span style="font-size: 1.5rem; font-weight: bold">0</span>
+        </div>
+
+        <p>
+            As shown, the power of combos is nothing to scoff at in this game; after 13 combos you
+            have sent <b>20 lines</b> of garbage, the full height of the board, and bound to kill
+            unless your opponent cancels part of the attack.
+        </p>
+
+        <p>
+            Thus, a stacking strategy was created to abuse the combo system: 4-Wide. In this stacking
+            strategy, you build a gap that is four minos wide (as implied in the name), and leave 3
+            residue minos in the well:
+        </p>
+
+        <img src="public/fourwide%20example.png" alt="four wide example" width="100%"/>
+
+        <p>
+            This has been shown to be an optimal way to secure combo, since there are many patterns
+            in which you can place pieces to continually clear lines.
+        </p>
+
+        <video preload muted controls width="800">
+            <source src="public/fourwide%20power.mp4" type="video/mp4">
+        </video>
+
+        <p>
+            Also, as shown in the video, you could possibly have garbage lines under the 4-Wide which
+            will benefit even more from the combo bonus. A 4-combo quad does double the damage with no combo,
+            and 8 combo does triple, 12 combo quadruple, etc.
+        </p>
+
+        <h2>Center 4-Wide</h2>
+        <p>
+            There are two main variations of 4-Wide and this is the one generally considered more
+            powerful. This requires you to build your gap in the center, which makes the sides
+            harder to stack since you only have 3 minos of space on each side. Thus, this is generally
+            used in more higher level play/with higher level players.
+        </p>
+
+        <p>
+            However, it boasts many advantages. The most major of which is that you are less prone
+            to topping out. Even if the opponent sends you lots of garbage to get the rest of your
+            stack above the 20th line, you still won't have covered your piece spawn position, since
+            the middle of your stack is a big gap:
+        </p>
+
+        <video autoplay muted loop width="800">
+            <source src="public/c4w%20example.mp4" type="video/mp4">
+        </video>
+
+        <p>
+            A consequence of this is that your stack is virtually larger, since you could get lucky
+            and continue your combo through the garbage after you have exhausted your 4-Wide.
+        </p>
+
+        <p>
+            Another advantage is that you can place your pieces faster than the other variation since
+            your pieces are already spawning in the gap, so you don't need to move them as far.
+        </p>
+
+        <p>
+            But again, this type of stacking requires more thinking because you only have 3 minos
+            of space to work with on each side, and therefore must actively consider the pieces in
+            the next queue in order to stack quickly.
+        </p>
+
+        <h2>Side 4-Wide</h2>
+        <img src="public/s4w%20example.png" alt="Side 4-Wide" />
+        <p>
+            Because Center 4-Wide isn't very easy to build, some players may choose to instead build
+            the 4-wide gap on the side of the board. This forsakes all the advantages of c4w for
+            ease of building.
+        </p>
+
+        <p>
+            Using this strategy, you are very prone to dying, since just a couple lines of garbage
+            will shift your stack up to cover piece spawn positions. Additionally, you have to shift
+            all your pieces to the side before you can place them, making your attack pressure
+            much slower.
+        </p>
+
+        <p>
+            For some players, this slow down in attack may be worth the faster and
+            <span class="keyword">easier stacking</span>. However, the main factor is usually
+            still the risk in getting topped-out while building, and most people eventually shift
+            to using c4w.
+        </p>
+
+        <h2>
+            General Notes
+        </h2>
+        <p>
+            Despite its power, and likely because of its power, most people look down on using 4-Wide.
+            It is said to make the gameplay very stale, since it is just executing the same patterns
+            to maintain combo throughout the game. It is also hated because of its unmatched power;
+            many players have said that the only way to beat four-wide consistently is to use four-wide
+            against it. <em>Fight fire with fire</em>.
+        </p>
+
+        <p>
+            It also allows perhaps less-skilled players to beat higher-skilled players, so many
+            look at it like its a crutch, a substitute for skill.
+        </p>
+
+        <p>
+            The most well-known 4w user is
+            <a href="https://www.youtube.com/channel/UCVx7kmzyY3z5T_jAgbDW-Fw">Wumbotize</a>
+        </p>
+    </div>
+    <div id="popups"></div>
+</div>
+</body>
+</html>
