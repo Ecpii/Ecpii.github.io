@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to TETR.IO - Multiplayer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="src/navbar.js" defer></script>
+    <script src="src/multi.js" defer></script>
+</head>
+<body>
+<div id="nav-bar">
+    <a href="index.html">
+        <div class="home-btn">
+            <img src="public/tetrio-color.svg" alt="TETR.IO" class="nav-item-contents"/>
+        </div>
+    </a>
+    <a href="#">
+        <div class="nav-item green" id="mech-btn">
+            <div class="nav-item-contents">
+                MECHANICS
+            </div>
+        </div>
+    </a>
+    <a href="solo.html">
+        <div class="nav-item purple mech-item">
+            <div class="nav-item-contents">
+                SOLO
+            </div>
+        </div>
+    </a>
+    <a href="multiplayer.html">
+        <div class="nav-item purple mech-item">
+            <div class="nav-item-contents">
+                MULTI
+            </div>
+        </div>
+    </a>
+    <a href="#">
+        <div class="nav-item pink" id="strat-btn">
+            <div class="nav-item-contents">
+                STRATEGIES
+            </div>
+        </div>
+    </a>
+    <a href="fourwide.html">
+        <div class="nav-item purple strat-item">
+            <div class="nav-item-contents">
+                FOUR-WIDE
+            </div>
+        </div>
+    </a>
+    <a href="tspins.html">
+        <div class="nav-item purple strat-item">
+            <div class="nav-item-contents">
+                T-SPIN
+            </div>
+        </div>
+    </a>
+    <a href="pc.html">
+        <div class="nav-item purple strat-item">
+            <div class="nav-item-contents">
+                PERFECT CLEAR
+            </div>
+        </div>
+    </a>
+    <a href="about.html">
+        <div class="nav-item grey">
+            <div class="nav-item-contents">
+                ABOUT
+            </div>
+        </div>
+    </a>
+</div>
+<div id="container">
+    <div id="content">
+        <h1>Multiplayer</h1>
+        <h3>How is a puzzle game turned into a multiplayer experience? How do players interact?</h3>
+
+        <p>
+            In singleplayer, much of the goal in Tetris is to earn the most points by clearing lines
+            and placing blocks. In multiplayer, the goal is a bit different - to
+            <span class="keyword">top out</span> your opponent.
+        </p>
+
+        <h2>Sending Garbage</h2>
+        <p>
+            In order to top out your opponent, you send them <span class="keyword">garbage</span>
+            when you clear lines. How much garbage you send depends on how many lines you clear at
+            once, the type of clear, and other factors. It's all detailed in the following table:
+        </p>
+
+        <img
+                src="https://cdn.discordapp.com/attachments/673303546564968566/716080410702118922/2020-05-30_02-07-18.png"
+                alt="TETR.IO garbage table"
+                width="100%"
+        />
+
+        <p>
+            After you perform one of the above clears, after a set delay, the opponent will receive
+            the garbage.
+        </p>
+
+        <h2>T-Spins</h2>
+        <p>
+            In the garbage table, you may have noticed the word "T-Spin". These refers to line
+            clears
+            done by soft-dropping the T-piece into a slot and rotating it. Of course, that is an
+            over-simplified description, and more details can be found
+            <a href="https://tetris.wiki/T-Spin">here</a>.
+        </p>
+
+        <p>
+            The most important part about T-Spins, though, are their efficiency. In the garbage
+            table,
+            you will notice that <span class="keyword">T-Spin Doubles</span> will send <b>the
+            same</b>
+            amount of garbage as Quads. However, T-Spin Doubles only requires you to clear two
+            lines,
+            while Quads require you to clear four lines. This means that you can build less (and
+            spend
+            less time stacking) to send the same amount of garbage. This is why they're so often
+            used
+            in modern Tetris.
+        </p>
+
+        <h2>Back 2 Back</h2>
+        <p>
+            In the garbage table above, you may have also noticed the acronym "B2B". This refers
+            to consecutively clearing only Quads or T-Spins. As you do so, you send more and more
+            garbage with each attack. However, the B2B chain can be easily broken by just one
+            <span class="keyword">skim</span>.
+        </p>
+
+        <h2>Receiving Garbage</h2>
+        <p>
+            When your opponent sends you garbage, it gets stored in a queue on the side of your
+            board. It will not be sent to your board immediately, but only after you place a piece
+            which does not clear a line.
+        </p>
+
+        <video autoplay muted loop>
+            <source src="public/garbage%20demo.mp4">
+        </video>
+
+        <p>
+            If you do place a piece that clears a line, the garbage will not be transferred to your
+            board - it will, however, remain in your queue. If the line clear you just performed
+            was able to send garbage, the amount you sent will be subtracted from the amount of
+            garbage you are waiting to receive. This allow you to cancel attacks with other attacks.
+        </p>
+
+    </div>
+    <div id="popups"></div>
+</div>
+
+</body>
+</html>

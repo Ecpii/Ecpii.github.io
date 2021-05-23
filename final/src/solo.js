@@ -88,8 +88,6 @@ keywords.forEach((element) => {
 })
 
 function displayPopup(e) {
-    console.log(e)
-
     popupArea.innerHTML = `
     <div class="info-box" style="top: calc(${e.pageY - 100}px - 1rem)">${infoPopups[this.innerHTML]}</div>`
 }

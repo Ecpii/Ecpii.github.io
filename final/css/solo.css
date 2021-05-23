@@ -6,17 +6,3 @@
 #auto-shift-demo {
     display: inline;
 }
-
-.keyword {
-    color: #8258ac;
-    font-weight: bold;
-    cursor: pointer;
-    border-bottom: 2px dashed #8258ac;
-    border-radius: 1px
-}
-
-.center {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-}

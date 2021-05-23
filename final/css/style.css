@@ -11,14 +11,28 @@ body {
     line-height: 1.5rem;
 }
 
+#container {
+    display: flex;
+    justify-content: center;
+}
+
 h3 {
     color: #444;
     margin-top: 0;
 }
 
-#container {
-    display: flex;
-    justify-content: center;
+.center {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.keyword {
+    color: #8258ac;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 2px dashed #8258ac;
+    border-radius: 1px
 }
 
 .info-box {
