@@ -7,7 +7,7 @@ const infoPopups = {
         " of your board and push the rest of the pieces up. They can be cleared as you would a normal " +
         "line.<br><img src='public/garbage%20line.png' alt='A garbage line' width='300'/>",
     "T-Spin Doubles": "A T-spin where you clear two lines. A T-Spin Single is one line, a T-Spin" +
-        " Triple is three lines (maximum).<br><img src='public/tsd.gif' alt='A T-Spin Double'/>",
+        " Triple is three lines (maximum).<br><img src='public/tsd.gif' alt='A T-Spin Double' width='300'/>",
     "skim": "A line clear that isn't a T-Spin or Quad, which breaks B2B chain.",
 }
 keywords.forEach((element) => {

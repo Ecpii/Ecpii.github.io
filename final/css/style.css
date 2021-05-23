@@ -4,6 +4,22 @@ body {
     color: white
 }
 
+::-webkit-scrollbar {
+    background: #161820
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(238, 238, 238, .3)
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(238, 238, 238, .5)
+}
+
+::-webkit-scrollbar-button {
+    display: none
+}
+
 #content {
     width: 800px;
     background: #111;
